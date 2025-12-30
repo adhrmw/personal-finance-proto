@@ -59,4 +59,19 @@ Table `transactions`:
 ## Deployment
 
 This project is optimized for deployment on [Vercel](https://vercel.com).
-Ensure you add the Environment Variables in your Vercel Project Settings.
+
+### CRITICAL: Environment Variables
+
+The build **WILL FAIL** if you do not add the environment variables in Vercel.
+
+1.  Go to your Vercel Project.
+2.  Navigate to **Settings** > **Environment Variables**.
+3.  Add the following keys (copy values from your `.env.local`):
+    - `NEXT_PUBLIC_SUPABASE_URL`
+    - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+4.  Redeploy.
+
+### Troubleshooting
+
+**Error: `Missing Supabase environment variables` during build.**
+This confirms that the app is secure. It refuses to build without secrets. Follow the steps above to fix it.
